@@ -27,16 +27,11 @@ var userLastName = prompt('Scrivi il tuo cognome').toLowerCase();
 console.log(lastName.push(userLastName));
 
 //STAMPA ARRAY SU HTML IN ORDINE ALFABETICO
-console.log(lastName.sort());
-
 var items = '';
 for (var i = 0; i < lastName.length; i++) {
     // console.log( lastName[i] );
 
-    items += '<li>' + lastName[i] + "  " + ((i)+ 1) + '</li>';
+    items += '<li>' + lastName.sort()[i] + "  " + ((i)+ 1) + '</li>';
 }
 
 document.getElementById('lista-cognomi').innerHTML = items;
-
-console.log(lastName.length(userLastName));
-
