@@ -21,7 +21,7 @@ console.log(lastName)
 
 
 //RICHIESTA COGNOME CON "CONTROLLO TESTO"
-var userLastName = prompt('Scrivi il tuo cognome').toLowerCase().trim();
+var userLastName = prompt('Scrivi il tuo cognome').toLowerCase();
 
 //INSERIMENTO COGNOME IN ARRAY
 console.log(lastName.push(userLastName));
@@ -31,8 +31,12 @@ console.log(lastName.sort());
 
 var items = '';
 for (var i = 0; i < lastName.length; i++) {
-    console.log( lastName[i] );
+    // console.log( lastName[i] );
 
-    items += '<li>' + lastName[i] + '</li>';
+    items += '<li>' + lastName[i] + "  " + ((i)+ 1) + '</li>';
 }
+
 document.getElementById('lista-cognomi').innerHTML = items;
+
+console.log(lastName.length(userLastName));
+
