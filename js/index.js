@@ -23,15 +23,28 @@ console.log(lastName)
 //RICHIESTA COGNOME CON "CONTROLLO TESTO"
 var userLastName = prompt('Scrivi il tuo cognome').toLowerCase();
 
+while (userLastName === null || userLastName.trim() === '') {
+    userLastName = prompt('Per favore inserisci un valore valido').toLowerCase();
+}
+
+userLastName = userLastName.trim();
+
 //INSERIMENTO COGNOME IN ARRAY
 console.log(lastName.push(userLastName));
 
-//STAMPA ARRAY SU HTML IN ORDINE ALFABETICO
+//ORDINE ALFABETICO
+console.log('Lista ordinata:', lastName.sort());
+
+//DETERMINARE POSIZIONE COGNOMEUTENTE
+var posUser = lastName.indexOf(userLastName) + 1;
+console.log('Posizione', posUser);
+
+//STAMPA ARRAY SU HTML 
 var items = '';
 for (var i = 0; i < lastName.length; i++) {
     // console.log( lastName[i] );
 
-    items += '<li>' + lastName.sort()[i] + "  " + ((i)+ 1) + '</li>';
+    items += '<li>' + lastName[i] + "  " + ((i)+ 1) + '</li>';
 }
 
 document.getElementById('lista-cognomi').innerHTML = items;
